@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A5CEACD238AC9DA00DFCED5 /* dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CEACC238AC9DA00DFCED5 /* dialog.swift */; };
 		9A85FE8F238140D000BEBAAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FE8E238140D000BEBAAA /* AppDelegate.swift */; };
 		9A85FE91238140D000BEBAAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FE90238140D000BEBAAA /* ViewController.swift */; };
 		9A85FE93238140D100BEBAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A85FE92238140D100BEBAAA /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A5CEACC238AC9DA00DFCED5 /* dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dialog.swift; sourceTree = "<group>"; };
 		9A85FE8B238140D000BEBAAA /* File Syncer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "File Syncer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A85FE8E238140D000BEBAAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A85FE90238140D000BEBAAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A5CEACB238AC9B900DFCED5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9A5CEACC238AC9DA00DFCED5 /* dialog.swift */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		9A85FE82238140D000BEBAAA = {
 			isa = PBXGroup;
 			children = (
@@ -96,11 +106,12 @@
 		9A85FE8D238140D000BEBAAA /* File Syncer */ = {
 			isa = PBXGroup;
 			children = (
+				9A5CEACB238AC9B900DFCED5 /* lib */,
 				9A85FE8E238140D000BEBAAA /* AppDelegate.swift */,
 				9A85FE90238140D000BEBAAA /* ViewController.swift */,
 				9A85FE92238140D100BEBAAA /* Assets.xcassets */,
-				9A85FE94238140D100BEBAAA /* Main.storyboard */,
 				9A85FE97238140D100BEBAAA /* Info.plist */,
+				9A85FE94238140D100BEBAAA /* Main.storyboard */,
 				9A85FE98238140D100BEBAAA /* File_Syncer.entitlements */,
 			);
 			path = "File Syncer";
@@ -255,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A85FE91238140D000BEBAAA /* ViewController.swift in Sources */,
+				9A5CEACD238AC9DA00DFCED5 /* dialog.swift in Sources */,
 				9A85FE8F238140D000BEBAAA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +439,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "Yamazaki-Keisuke.File-Syncer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -445,6 +458,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "Yamazaki-Keisuke.File-Syncer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

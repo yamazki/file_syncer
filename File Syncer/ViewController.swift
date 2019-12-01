@@ -22,6 +22,9 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func selectDirectory(_ sender : Any) {
+        print(Dialog.selectDirectory());
+    }
 
 }
 
