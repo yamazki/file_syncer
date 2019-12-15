@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class Dialog {
+class Dialog: NSObject {
     class func selectDirectory() -> String {
         let openPanel = NSOpenPanel();
         openPanel.canChooseDirectories = true;

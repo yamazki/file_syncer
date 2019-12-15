@@ -9,6 +9,9 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    @IBOutlet var textField1: NSTextField!
+    @IBOutlet var textField2: NSTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +25,12 @@ class ViewController: NSViewController {
         }
     }
 
-    @IBAction func selectDirectory(_ sender : Any) {
-        print(Dialog.selectDirectory());
+    @IBAction func selectDirectoryButton1(_ sender : Any) {
+        textField1.stringValue = Dialog.selectDirectory();
+    }
+    
+    @IBAction func selectDirectoryButton2(_ sender : Any) {
+        textField2.stringValue = Dialog.selectDirectory();
     }
 
 }
