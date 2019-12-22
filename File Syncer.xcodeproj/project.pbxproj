@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A5CEACD238AC9DA00DFCED5 /* dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CEACC238AC9DA00DFCED5 /* dialog.swift */; };
+		9A5CEACD238AC9DA00DFCED5 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CEACC238AC9DA00DFCED5 /* Dialog.swift */; };
 		9A85FE8F238140D000BEBAAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FE8E238140D000BEBAAA /* AppDelegate.swift */; };
 		9A85FE91238140D000BEBAAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FE90238140D000BEBAAA /* ViewController.swift */; };
 		9A85FE93238140D100BEBAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A85FE92238140D100BEBAAA /* Assets.xcassets */; };
 		9A85FE96238140D100BEBAAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A85FE94238140D100BEBAAA /* Main.storyboard */; };
 		9A85FEA2238140D100BEBAAA /* File_SyncerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FEA1238140D100BEBAAA /* File_SyncerTests.swift */; };
 		9A85FEAD238140D100BEBAAA /* File_SyncerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85FEAC238140D100BEBAAA /* File_SyncerUITests.swift */; };
+		9AA1B5FB23ABAA9600387866 /* FSFileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1B5FA23ABAA9600387866 /* FSFileObject.swift */; };
+		9AA1B5FF23ABACC100387866 /* FSFolderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1B5FE23ABACC100387866 /* FSFolderObject.swift */; };
+		9AA1B60123ACF5C400387866 /* FSAbstractFileEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1B60023ACF5C400387866 /* FSAbstractFileEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9A5CEACC238AC9DA00DFCED5 /* dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dialog.swift; sourceTree = "<group>"; };
+		9A5CEACC238AC9DA00DFCED5 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		9A85FE8B238140D000BEBAAA /* File Syncer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "File Syncer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A85FE8E238140D000BEBAAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A85FE90238140D000BEBAAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +51,9 @@
 		9A85FEA8238140D100BEBAAA /* File SyncerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "File SyncerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A85FEAC238140D100BEBAAA /* File_SyncerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File_SyncerUITests.swift; sourceTree = "<group>"; };
 		9A85FEAE238140D100BEBAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AA1B5FA23ABAA9600387866 /* FSFileObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSFileObject.swift; sourceTree = "<group>"; };
+		9AA1B5FE23ABACC100387866 /* FSFolderObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSFolderObject.swift; sourceTree = "<group>"; };
+		9AA1B60023ACF5C400387866 /* FSAbstractFileEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSAbstractFileEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +84,8 @@
 		9A5CEACB238AC9B900DFCED5 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				9A5CEACC238AC9DA00DFCED5 /* dialog.swift */,
+				9AA1B5F923ABAA6D00387866 /* FSFileObjectHandler */,
+				9A5CEACC238AC9DA00DFCED5 /* Dialog.swift */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -133,6 +140,16 @@
 				9A85FEAE238140D100BEBAAA /* Info.plist */,
 			);
 			path = "File SyncerUITests";
+			sourceTree = "<group>";
+		};
+		9AA1B5F923ABAA6D00387866 /* FSFileObjectHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9AA1B5FA23ABAA9600387866 /* FSFileObject.swift */,
+				9AA1B5FE23ABACC100387866 /* FSFolderObject.swift */,
+				9AA1B60023ACF5C400387866 /* FSAbstractFileEntry.swift */,
+			);
+			path = FSFileObjectHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +283,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A85FE91238140D000BEBAAA /* ViewController.swift in Sources */,
-				9A5CEACD238AC9DA00DFCED5 /* dialog.swift in Sources */,
+				9A5CEACD238AC9DA00DFCED5 /* Dialog.swift in Sources */,
+				9AA1B60123ACF5C400387866 /* FSAbstractFileEntry.swift in Sources */,
 				9A85FE8F238140D000BEBAAA /* AppDelegate.swift in Sources */,
+				9AA1B5FB23ABAA9600387866 /* FSFileObject.swift in Sources */,
+				9AA1B5FF23ABACC100387866 /* FSFolderObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
