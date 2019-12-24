@@ -10,11 +10,10 @@ import Foundation
 
 class FSAbstractFileEntry {
     
-    static let defaultFileManager = FileManager.default;
     let path: String;
-    let fileAttribute: [FileAttributeKey: Any]?;
-    let fileType: String! = nil;
-    
+    let fileAttribute: [FileAttributeKey: Any];
+    var fileList: Array<FSAbstractFileEntry>! = nil;
+
     init(path: String, fileAttribute: [FileAttributeKey: Any]) {
         self.path = path;
         self.fileAttribute = fileAttribute;
@@ -36,7 +35,7 @@ class FSAbstractFileEntry {
     
     static func getFileAttribute(path: String) -> [FileAttributeKey: Any]? {
         do {
-            let _fileAttribute = try defaultFileManager.attributesOfItem(atPath: path);
+            let _fileAttribute = try FileManager.default.attributesOfItem(atPath: path);
             return _fileAttribute;
         } catch let error as NSError {
             print(error)
