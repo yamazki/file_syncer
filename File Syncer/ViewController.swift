@@ -10,13 +10,19 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    @IBOutlet var textField1: NSTextField!
-    @IBOutlet var textField2: NSTextField!
+    @IBOutlet var textField1: NSTextField!;
+    @IBOutlet var textField2: NSTextField!;
+    @IBOutlet var treeController: NSTreeController!;
+    @IBOutlet var outlineView: NSOutlineView!;
+    
+    @objc dynamic var folderObject1: FSAbstractFileEntry?;
+
+    var fileName = "test";
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(self)
+        super.viewDidLoad();
+        treeController.content = self.folderObject1;
     }
 
     override var representedObject: Any? {
@@ -26,24 +32,23 @@ class ViewController: NSViewController {
     }
 
     @IBAction func selectDirectoryButton1(_ sender : Any) {
-        textField1.stringValue = Dialog.selectDirectory();
-        let _path = textField1.stringValue;
+        self.textField1.stringValue = Dialog.selectDirectory();
+        let _path = self.textField1.stringValue;
         
-        let pathIsFolder = FSAbstractFileEntry.isFolder(path: _path);
-        if (pathIsFolder == false) {
+        let _pathIsFolder = FSAbstractFileEntry.isFolder(path: _path);
+        if (_pathIsFolder == false) {
             return;
         }
             
+        self.folderObject1 = FSAbstractFileEntry.createFileObject(path: _path);
+        self.outlineView.reloadItem(self, reloadChildren: true);
 
-        if let folderObject1 = FSAbstractFileEntry.createFileObject(path: _path) {
-            
 
-        }
         // FolderObject.init(folderPath: textField1.stringValue);
     }
     
     @IBAction func selectDirectoryButton2(_ sender : Any) {
-        textField2.stringValue = Dialog.selectDirectory();
+        self.textField2.stringValue = Dialog.selectDirectory();
     }
 
 }

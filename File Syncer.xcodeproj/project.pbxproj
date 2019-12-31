@@ -145,9 +145,9 @@
 		9AA1B5F923ABAA6D00387866 /* FSFileObjectHandler */ = {
 			isa = PBXGroup;
 			children = (
+				9AA1B60023ACF5C400387866 /* FSAbstractFileEntry.swift */,
 				9AA1B5FA23ABAA9600387866 /* FSFileObject.swift */,
 				9AA1B5FE23ABACC100387866 /* FSFolderObject.swift */,
-				9AA1B60023ACF5C400387866 /* FSAbstractFileEntry.swift */,
 			);
 			path = FSFileObjectHandler;
 			sourceTree = "<group>";
@@ -391,6 +391,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -444,6 +445,7 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};

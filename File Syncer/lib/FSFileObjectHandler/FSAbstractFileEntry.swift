@@ -8,17 +8,19 @@
 
 import Foundation
 
-class FSAbstractFileEntry {
-    
+class FSAbstractFileEntry : NSObject {
     let path: String;
+    let fileName: String;
     let fileAttribute: [FileAttributeKey: Any];
-    var fileList: Array<FSAbstractFileEntry>! = nil;
+    var fileList = [FSAbstractFileEntry]();
 
     init(path: String, fileAttribute: [FileAttributeKey: Any]) {
         self.path = path;
+        self.fileName = ((path as NSString).lastPathComponent as String);
         self.fileAttribute = fileAttribute;
     };
 
+    // ファイルのタイプにより、生成する派生クラスを分けている(static factory method)
     static func createFileObject(path: String) -> FSAbstractFileEntry? {
         if let _fileAttribute = self.getFileAttribute(path: path) {
             if let _fileType = _fileAttribute[FileAttributeKey.type] as? String {
@@ -46,9 +48,7 @@ class FSAbstractFileEntry {
     static func isFolder(path: String) -> Bool {
         if let _fileAttribute = self.getFileAttribute(path: path) {
             if let _fileType = _fileAttribute[FileAttributeKey.type] as? String {
-                return _fileType == "NSFileTypeDirectory"
-                                    ? true
-                                    : false;
+                return _fileType == "NSFileTypeDirectory" ? true : false;
             }
         }
         return false;
