@@ -18,9 +18,9 @@ class FSFolderObject: FSAbstractFileEntry {
     func getAllFilesInFolder() {
         do {
             let _path = try FileManager.default.contentsOfDirectory(atPath: self.path);
-             _path.map { ((self.path as NSString).appendingPathComponent($0) as String) }
-                  .compactMap { FSAbstractFileEntry.createFileObject(path: $0) }
-                  .forEach {self.fileList.append($0)};
+                _path.map { ((self.path as NSString).appendingPathComponent($0) as String) }
+                     .compactMap { FSAbstractFileEntry.createFileObject(path: $0) }
+                     .forEach {self.fileList.append($0)};
             
         } catch let error as NSError {
             print(error);

@@ -10,7 +10,7 @@ import Foundation
 
 class FSAbstractFileEntry : NSObject {
     let path: String;
-    let fileName: String;
+    @objc dynamic let fileName: String;
     let fileAttribute: [FileAttributeKey: Any];
     var fileList = [FSAbstractFileEntry]();
 
@@ -53,5 +53,22 @@ class FSAbstractFileEntry : NSObject {
         }
         return false;
     };
+    
+    /*
+    // TreeControllerのためのオブジェクト
+    // ここから
+    */
+    @objc func isLeaf() -> Bool {
+        return self.fileList.isEmpty
+    };
+    
+    @objc func childCount() -> Int {
+        return self.fileList.count;
+    };
+    
+    @objc func myChildren() -> [FSAbstractFileEntry] {
+        return self.fileList;
+    }
+    // ここまで
 
 }

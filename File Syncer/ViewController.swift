@@ -16,13 +16,14 @@ class ViewController: NSViewController {
     @IBOutlet var outlineView: NSOutlineView!;
     
     @objc dynamic var folderObject1: FSAbstractFileEntry?;
-
-    var fileName = "test";
+    @objc dynamic var folderObjectList1 = [FSAbstractFileEntry]();
 
     override func viewDidLoad() {
-        print(self)
         super.viewDidLoad();
-        treeController.content = self.folderObject1;
+        // treeController.content = self.folderObjectList1;
+        self.folderObject1 = FSAbstractFileEntry.createFileObject(path: "/Users/yamazaki-keisuke/Documents/test");
+        self.folderObjectList1.append(self.folderObject1!);
+        // self.outlineView.reloadItem(self, reloadChildren: true);
     }
 
     override var representedObject: Any? {
@@ -40,8 +41,10 @@ class ViewController: NSViewController {
             return;
         }
             
+        // self.folderObjectList1.append(FSAbstractFileEntry.createFileObject(path: _path) as! FSFolderObject);
         self.folderObject1 = FSAbstractFileEntry.createFileObject(path: _path);
-        self.outlineView.reloadItem(self, reloadChildren: true);
+        self.folderObjectList1 = self.folderObject1!.fileList;
+        // self.outlineView.reloadItem(self, reloadChildren: true);
 
 
         // FolderObject.init(folderPath: textField1.stringValue);
@@ -50,6 +53,6 @@ class ViewController: NSViewController {
     @IBAction func selectDirectoryButton2(_ sender : Any) {
         self.textField2.stringValue = Dialog.selectDirectory();
     }
-
+    
 }
 
