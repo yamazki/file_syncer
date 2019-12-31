@@ -20,10 +20,6 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad();
-        // treeController.content = self.folderObjectList1;
-        self.folderObject1 = FSAbstractFileEntry.createFileObject(path: "/Users/yamazaki-keisuke/Documents/test");
-        self.folderObjectList1.append(self.folderObject1!);
-        // self.outlineView.reloadItem(self, reloadChildren: true);
     }
 
     override var representedObject: Any? {
@@ -44,7 +40,9 @@ class ViewController: NSViewController {
         // self.folderObjectList1.append(FSAbstractFileEntry.createFileObject(path: _path) as! FSFolderObject);
         self.folderObject1 = FSAbstractFileEntry.createFileObject(path: _path);
         self.folderObjectList1 = self.folderObject1!.fileList;
-        // self.outlineView.reloadItem(self, reloadChildren: true);
+        self.folderObjectList1.removeAll();
+        self.folderObjectList1.append(self.folderObject1!);
+        self.outlineView.reloadItem(self, reloadChildren: true);
 
 
         // FolderObject.init(folderPath: textField1.stringValue);
