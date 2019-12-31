@@ -7,13 +7,18 @@
 //
 
 import Foundation
+import Cocoa
 
 class FSAbstractFileEntry : NSObject {
     let path: String;
     @objc dynamic let fileName: String;
     let fileAttribute: [FileAttributeKey: Any];
     var fileList = [FSAbstractFileEntry]();
+    @objc let image = NSImage(named: NSImage.folderName);
 
+    // @objc dynamic var fileIcon: NSImagegeName;
+    // NSImageNameFolderBurnable
+    
     init(path: String, fileAttribute: [FileAttributeKey: Any]) {
         self.path = path;
         self.fileName = ((path as NSString).lastPathComponent as String);

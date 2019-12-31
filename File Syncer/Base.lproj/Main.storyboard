@@ -777,20 +777,32 @@
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                 <tableColumns>
-                                                                    <tableColumn width="590" minWidth="40" maxWidth="1000" id="3Ag-8U-6Z4">
+                                                                    <tableColumn width="89" minWidth="40" maxWidth="1000" id="3Ag-8U-6Z4">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                             <font key="font" metaFont="smallSystem"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
-                                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="0ob-Ui-M6P">
+                                                                        <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="gg2-BV-Vo1"/>
+                                                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                        <connections>
+                                                                            <binding destination="7o3-W2-1L4" name="value" keyPath="arrangedObjects.image" id="PyU-PF-WEK"/>
+                                                                        </connections>
+                                                                    </tableColumn>
+                                                                    <tableColumn width="500" minWidth="10" maxWidth="3.4028234663852886e+38" id="23T-Nb-YfD">
+                                                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </tableHeaderCell>
+                                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="T0H-EQ-lqM">
                                                                             <font key="font" metaFont="system"/>
                                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                         <connections>
-                                                                            <binding destination="7o3-W2-1L4" name="value" keyPath="arrangedObjects.fileName" id="SPy-z6-sym"/>
+                                                                            <binding destination="7o3-W2-1L4" name="value" keyPath="arrangedObjects.fileName" id="ZGm-ix-863"/>
                                                                         </connections>
                                                                     </tableColumn>
                                                                 </tableColumns>
@@ -929,9 +941,6 @@
                     </connections>
                 </viewController>
                 <treeController objectClassName="FSAbstractFileEntry" editable="NO" childrenKeyPath="myChildren" countKeyPath="childCount" leafKeyPath="isLeaf" id="7o3-W2-1L4">
-                    <declaredKeys>
-                        <string>FSAbstractFileEntry</string>
-                    </declaredKeys>
                     <connections>
                         <binding destination="XfG-lQ-9wD" name="contentArray" keyPath="self.folderObjectList1" id="jaX-XU-rEL"/>
                     </connections>
