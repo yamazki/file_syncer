@@ -11,36 +11,41 @@ import Cocoa
 
 class FSAbstractFileEntry : NSObject {
     let path: String;
-    @objc dynamic let fileName: String;
     let fileAttribute: [FileAttributeKey: Any];
     var fileList = [FSAbstractFileEntry]();
-    @objc let image: NSImage;
-    @objc let isSync = true;
+    let rootFolderPath:String;
+    @objc dynamic let fileName: String;
+    @objc dynamic let image: NSImage;
+    @objc dynamic var isSync = true;
 
     // @objc dynamic var fileIcon: NSImagegeName;
     // NSImageNameFolderBurnable
     
-    init(path: String, fileAttribute: [FileAttributeKey: Any]) {
+    init(path: String, rootFolderPath: String, fileAttribute: [FileAttributeKey: Any]) {
         self.path = path;
+        self.rootFolderPath = rootFolderPath;
         self.image = NSWorkspace.shared.icon(forFile: self.path);
         self.fileName = ((path as NSString).lastPathComponent as String);
         self.fileAttribute = fileAttribute;
     };
 
     // ファイルのタイプにより、生成する派生クラスを分けている(static factory method)
-    static func createFileObject(path: String) -> FSAbstractFileEntry? {
+    static func createFileObject(path: String, rootFolderPath: String) -> FSAbstractFileEntry? {
         if let _fileAttribute = self.getFileAttribute(path: path) {
             if let _fileType = _fileAttribute[FileAttributeKey.type] as? String {
                 switch (_fileType) {
                     case "NSFileTypeDirectory":
-                        return FSFolderObject.init(path: path, fileAttribute: _fileAttribute);
+                        return FSFolderObject.init(path: path, rootFolderPath: rootFolderPath, fileAttribute: _fileAttribute);
                     default:
-                        return FSFileObject.init(path: path, fileAttribute: _fileAttribute);
+                        return FSFileObject.init(path: path, rootFolderPath: rootFolderPath, fileAttribute: _fileAttribute);
                 }
             }
         }
         return nil
     };
+    
+    // func getPathFromRootFolderPath(rootFolderPath: String) -> {
+    // };
     
     static func getFileAttribute(path: String) -> [FileAttributeKey: Any]? {
         do {

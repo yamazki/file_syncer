@@ -38,7 +38,7 @@ class ViewController: NSViewController {
         }
             
         // self.folderObjectList1.append(FSAbstractFileEntry.createFileObject(path: _path) as! FSFolderObject);
-        self.folderObject1 = FSAbstractFileEntry.createFileObject(path: _path);
+        self.folderObject1 = FSAbstractFileEntry.createFileObject(path: _path, rootFolderPath: _path);
         self.folderObjectList1 = self.folderObject1!.fileList;
         self.folderObjectList1.removeAll();
         self.folderObjectList1.append(self.folderObject1!);
