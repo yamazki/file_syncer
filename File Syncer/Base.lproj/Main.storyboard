@@ -710,11 +710,11 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="File_Syncer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="705" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="705" height="503"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-ki-LIm">
-                                <rect key="frame" x="26" y="30" width="652" height="448"/>
+                                <rect key="frame" x="26" y="32" width="652" height="448"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
@@ -795,15 +795,15 @@
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Jh-6X-ogV">
-                                                                                        <rect key="frame" x="3" y="0.0" width="17" height="17"/>
+                                                                                        <rect key="frame" x="20" y="-3" width="17" height="17"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="gJw-ox-Y99"/>
                                                                                         <connections>
                                                                                             <binding destination="COB-mV-Wnm" name="value" keyPath="objectValue.image" id="m9J-hN-zbb"/>
                                                                                         </connections>
                                                                                     </imageView>
-                                                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GUn-rG-hGF">
-                                                                                        <rect key="frame" x="25" y="0.0" width="568" height="17"/>
+                                                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" id="GUn-rG-hGF">
+                                                                                        <rect key="frame" x="37" y="-3" width="501" height="18"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="7wH-NT-iMU">
                                                                                             <font key="font" metaFont="system"/>
@@ -814,6 +814,14 @@
                                                                                             <binding destination="COB-mV-Wnm" name="value" keyPath="objectValue.fileName" id="bgZ-yV-7vS"/>
                                                                                         </connections>
                                                                                     </textField>
+                                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nf-eB-bIu">
+                                                                                        <rect key="frame" x="1" y="-3" width="22" height="18"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bRO-Tu-j5c">
+                                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                                            <font key="font" metaFont="system"/>
+                                                                                        </buttonCell>
+                                                                                    </button>
                                                                                 </subviews>
                                                                                 <connections>
                                                                                     <outlet property="imageView" destination="8Jh-6X-ogV" id="Jcv-pA-cb0"/>
@@ -967,7 +975,7 @@
                     </connections>
                 </treeController>
             </objects>
-            <point key="canvasLocation" x="187.5" y="934"/>
+            <point key="canvasLocation" x="187.5" y="935.5"/>
         </scene>
     </scenes>
     <resources>

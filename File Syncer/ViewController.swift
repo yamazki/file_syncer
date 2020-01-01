@@ -42,8 +42,7 @@ class ViewController: NSViewController {
         self.folderObjectList1 = self.folderObject1!.fileList;
         self.folderObjectList1.removeAll();
         self.folderObjectList1.append(self.folderObject1!);
-        self.outlineView.reloadItem(self, reloadChildren: true);
-
+        self.outlineView.expandItem(nil, expandChildren: true)
 
         // FolderObject.init(folderPath: textField1.stringValue);
     }
