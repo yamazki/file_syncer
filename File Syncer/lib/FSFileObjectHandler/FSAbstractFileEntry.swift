@@ -44,8 +44,9 @@ class FSAbstractFileEntry : NSObject {
         return nil
     };
     
-    // func getPathFromRootFolderPath(rootFolderPath: String) -> {
-    // };
+    func getPathFromRootFolderPath() -> String {
+        return self.path.replacingOccurrences(of: self.rootFolderPath, with: "");
+    };
     
     static func getFileAttribute(path: String) -> [FileAttributeKey: Any]? {
         do {
