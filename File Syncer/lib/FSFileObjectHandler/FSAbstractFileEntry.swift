@@ -14,13 +14,14 @@ class FSAbstractFileEntry : NSObject {
     @objc dynamic let fileName: String;
     let fileAttribute: [FileAttributeKey: Any];
     var fileList = [FSAbstractFileEntry]();
-    @objc let image = NSImage(named: NSImage.folderName);
+    @objc let image: NSImage;
 
     // @objc dynamic var fileIcon: NSImagegeName;
     // NSImageNameFolderBurnable
     
     init(path: String, fileAttribute: [FileAttributeKey: Any]) {
         self.path = path;
+        self.image = NSWorkspace.shared.icon(forFile: self.path);
         self.fileName = ((path as NSString).lastPathComponent as String);
         self.fileAttribute = fileAttribute;
     };
