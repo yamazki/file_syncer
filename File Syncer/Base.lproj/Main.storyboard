@@ -821,6 +821,9 @@
                                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                             <font key="font" metaFont="system"/>
                                                                                         </buttonCell>
+                                                                                        <connections>
+                                                                                            <binding destination="COB-mV-Wnm" name="value" keyPath="objectValue.isSync" id="Dmv-9o-cfH"/>
+                                                                                        </connections>
                                                                                     </button>
                                                                                 </subviews>
                                                                                 <connections>

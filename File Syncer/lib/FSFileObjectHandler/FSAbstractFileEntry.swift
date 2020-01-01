@@ -15,6 +15,7 @@ class FSAbstractFileEntry : NSObject {
     let fileAttribute: [FileAttributeKey: Any];
     var fileList = [FSAbstractFileEntry]();
     @objc let image: NSImage;
+    @objc let isSync = true;
 
     // @objc dynamic var fileIcon: NSImagegeName;
     // NSImageNameFolderBurnable
