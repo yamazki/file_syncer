@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 class Dialog: NSObject {
-    class func selectDirectory() -> String {
+    class func selectDirectory() -> String? {
         let openPanel = NSOpenPanel();
         openPanel.canChooseDirectories = true;
         openPanel.canChooseFiles = false;
@@ -21,7 +21,7 @@ class Dialog: NSObject {
                 return panelURL.path;
             }
         }
-        return "";
+        return nil;
     }
     
 }

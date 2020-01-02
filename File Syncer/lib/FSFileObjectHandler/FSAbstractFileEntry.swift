@@ -16,11 +16,15 @@ class FSAbstractFileEntry : NSObject {
     let rootFolderPath:String;
     @objc dynamic let fileName: String;
     @objc dynamic let image: NSImage;
-    @objc dynamic var isSync = true;
+    // didsetを使用して監視する
+    // フォルダリストは以下のチェックボックスを再帰的に変更する
+    @objc dynamic var isSync = true {
+        didSet {
+            print("test");
+        }
+    };
 
-    // @objc dynamic var fileIcon: NSImagegeName;
-    // NSImageNameFolderBurnable
-    
+
     init(path: String, rootFolderPath: String, fileAttribute: [FileAttributeKey: Any]) {
         self.path = path;
         self.rootFolderPath = rootFolderPath;
@@ -31,6 +35,7 @@ class FSAbstractFileEntry : NSObject {
 
     // ファイルのタイプにより、生成する派生クラスを分けている(static factory method)
     static func createFileObject(path: String, rootFolderPath: String) -> FSAbstractFileEntry? {
+        // guard let の方が見やすいかもしれない
         if let _fileAttribute = self.getFileAttribute(path: path) {
             if let _fileType = _fileAttribute[FileAttributeKey.type] as? String {
                 switch (_fileType) {
@@ -52,8 +57,8 @@ class FSAbstractFileEntry : NSObject {
         do {
             let _fileAttribute = try FileManager.default.attributesOfItem(atPath: path);
             return _fileAttribute;
-        } catch let error as NSError {
-            print(error)
+        } catch let _error as NSError {
+            print(_error)
             return nil;
         }
     };

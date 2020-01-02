@@ -29,15 +29,18 @@ class ViewController: NSViewController {
     }
 
     @IBAction func selectDirectoryButton1(_ sender : Any) {
-        self.textField1.stringValue = Dialog.selectDirectory();
-        let _path = self.textField1.stringValue;
         
+        guard let _path = Dialog.selectDirectory() else {
+            return;
+        }
+
+        self.textField1.stringValue = _path;
+
         let _pathIsFolder = FSAbstractFileEntry.isFolder(path: _path);
         if (_pathIsFolder == false) {
             return;
         }
             
-        // self.folderObjectList1.append(FSAbstractFileEntry.createFileObject(path: _path) as! FSFolderObject);
         self.folderObject1 = FSAbstractFileEntry.createFileObject(path: _path, rootFolderPath: _path);
         self.folderObjectList1 = self.folderObject1!.fileList;
         self.folderObjectList1.removeAll();
@@ -48,8 +51,9 @@ class ViewController: NSViewController {
     }
     
     @IBAction func selectDirectoryButton2(_ sender : Any) {
-        self.textField2.stringValue = Dialog.selectDirectory();
     }
+    
+    // class func get
     
 }
 

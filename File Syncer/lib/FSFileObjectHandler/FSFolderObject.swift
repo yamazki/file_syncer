@@ -20,10 +20,10 @@ class FSFolderObject: FSAbstractFileEntry {
             let _path = try FileManager.default.contentsOfDirectory(atPath: self.path);
                 _path.map { ((self.path as NSString).appendingPathComponent($0) as String) }
                      .compactMap { FSAbstractFileEntry.createFileObject(path: $0, rootFolderPath: self.rootFolderPath) }
-                     .forEach {self.fileList.append($0)};
+                     .forEach { self.fileList.append($0) };
             
-        } catch let error as NSError {
-            print(error);
+        } catch let _error as NSError {
+            print(_error);
         }
     }
     
